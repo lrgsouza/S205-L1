@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-
-  constructor() {}
+  user: any = {
+    name: 'Lucas Ribeiro Garcia de Souza',
+    email: 'lrgsouza@ges.inatel.br',
+    phone: '+5519993447675'
+  }
+  constructor() {
+  }
 
 }
