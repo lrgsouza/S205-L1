@@ -42,7 +42,7 @@
 
 <ion-content [fullscreen]="true" *ngIf="selectedSegmentMind == 'mind-care'">
   <div class="mind-consulta-button">
-    <ion-button color="inatel" expand="block">
+    <ion-button color="inatel" expand="block" (click)="setOpen(true)">
       <ion-icon slot="start" name="add" color="inatel"></ion-icon>
       Agendar consulta
     </ion-button>
@@ -83,3 +83,24 @@
     </ion-item-sliding>
   </ion-list>
 </ion-content>
+
+
+<ion-modal [isOpen]="isModalOpen">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Angendar Consulta</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="setOpen(false)">Fechar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+
+      <ion-item lines="none">
+        <ion-datetime hourValues="9,10,11,12,13,14,15,16,17" minuteValues="0,15,30,45" [isDateEnabled]="isWeekday"></ion-datetime>
+      </ion-item>
+      <ion-button expand="block" color="inatel" class="ion-margin" (click)="setOpen(false)">Confirmar</ion-button>  
+    </ion-content>
+  </ng-template>
+</ion-modal>

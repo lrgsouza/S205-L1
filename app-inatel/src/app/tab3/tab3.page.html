@@ -30,18 +30,18 @@
         <ion-list>
           <ion-item>
             <ion-label>Horário</ion-label>
-            <ion-text color="primary">
+            <ion-text color="inatel">
               <p>{{aula.hora}}</p>
             </ion-text>
           </ion-item>
           <ion-item>
             <ion-label>Local</ion-label>
-            <ion-text color="primary">
+            <ion-text color="inatel">
               <p>{{aula.local}}</p>
             </ion-text>
           </ion-item>
         </ion-list>
-        <ion-button expand="block" (click)="setOpen(true, aula)">Detalhes</ion-button>
+        <ion-button expand="block" color="inatel" (click)="setOpen(true, aula)">Detalhes</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

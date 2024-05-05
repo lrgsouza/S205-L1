@@ -13,7 +13,15 @@ export class Tab4Page implements OnInit {
 
   ngOnInit() {}
   
-
+  isModalOpen = false;
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
+  isWeekday = (dateString: string) => {
+    const date = new Date(dateString);
+    const utcDay = date.getUTCDay();
+    return utcDay !== 0 && utcDay !== 6;
+  };
   segmentChangedMind(ev: any) {
     console.log('Segment changed', ev.target.value);
     this.selectedSegmentMind = ev.target.value;
