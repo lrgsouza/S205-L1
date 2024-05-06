@@ -31,8 +31,12 @@
       <ion-label>Email:</ion-label>
       <ion-text color="medium" >{{user.email}}</ion-text>
     </ion-item>
+    <ion-item>
+      <ion-label>Matrícula:</ion-label>
+      <ion-text color="medium" >{{user.curso}}{{user.matricula}}</ion-text>
+    </ion-item>
 
-    <ion-item button detail="true" (click)="setOpen(true)">
+    <ion-item button detail="true" id="present-alert">
 
         <ion-label>Financeiro</ion-label>
         <ion-icon name="card-outline" slot="start" aria-hidden="true"></ion-icon>
@@ -43,9 +47,8 @@
 </ion-content>
 
 <ion-alert
-  [isOpen]="isAlertOpen"
+  trigger="present-alert"
   header="Tesouraria INATEL"
   message="Você não possui pendências com o Financeiro."
   [buttons]="alertButtons"
-  (didDismiss)="setOpen(false)"
 ></ion-alert>

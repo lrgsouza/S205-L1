@@ -7,9 +7,11 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
   user: any = {
-    name: 'Lucas Ribeiro Garcia de Souza',
-    email: 'lrgsouza@ges.inatel.br',
-    phone: '+5519993447675'
+    name: 'Lucas Mirosvaldo de Oliveira',
+    email: 'lmoliveira@ges.inatel.br',
+    phone: '+551199998888',
+    curso: 'GES',
+    matricula: '123'
   }
   constructor() {
   }
