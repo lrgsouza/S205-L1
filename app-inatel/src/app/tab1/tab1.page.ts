@@ -13,5 +13,11 @@ export class Tab1Page {
   }
   constructor() {
   }
+  isAlertOpen = false;
+  alertButtons = ['Ok'];
+
+  setOpen(isOpen: boolean) {
+    this.isAlertOpen = isOpen;
+  }
 
 }

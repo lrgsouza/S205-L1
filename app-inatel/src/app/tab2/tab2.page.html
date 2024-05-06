@@ -9,15 +9,54 @@
 </ion-header>
 
 <ion-content>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Awesome Event</ion-card-subtitle>
-      <ion-card-title>Awesome Event</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Awesome content
-    </ion-card-content>
-  </ion-card>
+  <ion-item>
+    <h3>Matricula</h3>
+  </ion-item>
+  <ion-list>
+    <ion-item button *ngFor="let materia of materiasMatriculadas" detail="true" (click)="setOpen(true, materia)">
+      <ion-label>
+        <h3>{{materia.id}}</h3>
+        <p>{{materia.nome}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
   
 </ion-content>
+
+
+<ion-modal [isOpen]="isModalOpen">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>{{detalhe.id}}</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="setOpen(false, false)">Fechar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-list>
+        <ion-item detail="true">
+          <ion-label>
+            <h3>Faltas</h3>
+            <p>{{detalhe.faltas}}/{{detalhe.faltasMax}}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item detail="true">
+          <ion-label>
+            <h3>Notas</h3>
+            <p>N1: {{detalhe.n1}}</p>
+            <p>N2: {{detalhe.n2}}</p>
+            <p>Nota Final: {{detalhe.nf}}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>
+            <h3>Ementa</h3>
+            <p>Aqui vai a ementa da matéria</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-modal>

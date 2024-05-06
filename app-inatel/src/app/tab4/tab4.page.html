@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-text color="inatel" class="ion-text-center">
-      <h1>Mind++ Lab</h1>
+    <ion-text color="inatel" class="center-text">
+      <h1 style="margin: 15px; margin-bottom: 15px">Mind++ Lab</h1>
     </ion-text>
   </ion-toolbar>
   <ion-segment value="networking" (ionChange)="segmentChangedMind($event)">
@@ -51,32 +51,16 @@
     <ion-list-header>
       <strong>Próximas consultas</strong>
     </ion-list-header>
-    <ion-item-sliding>
-      <ion-item [button]="true">
+    <ion-item-sliding *ngFor="let cons of consultas">
+      <ion-item [button]="true" >
         <ion-label>
-          <h3>Consulta 1</h3>
-          <p>01/06/2024</p>
-          <p>15:00</p>
+          <h3>{{cons.nome}}</h3>
+          <p>{{cons.data}}</p>
+          <p>{{cons.horario}}</p>
         </ion-label>
       </ion-item>
       <ion-item-options slot="end">
-        <ion-item-option color="danger" expandable="true">
-          <ion-icon slot="icon-only" name="trash"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-
-
-    <ion-item-sliding>
-      <ion-item [button]="true">
-        <ion-label>
-          <h3>Consulta 2</h3>
-          <p>11/07/2024</p>
-          <p>15:00</p>
-        </ion-label>
-      </ion-item>
-      <ion-item-options slot="end">
-        <ion-item-option color="danger" expandable="true">
+        <ion-item-option color="danger" expandable="true" (click)="deleteConsulta(cons.id)">
           <ion-icon slot="icon-only" name="trash"></ion-icon>
         </ion-item-option>
       </ion-item-options>
@@ -97,10 +81,17 @@
     </ion-header>
     <ion-content class="ion-padding">
 
-      <ion-item lines="none">
-        <ion-datetime hourValues="9,10,11,12,13,14,15,16,17" minuteValues="0,15,30,45" [isDateEnabled]="isWeekday"></ion-datetime>
+      <ion-item>
+        <ion-datetime hourCycle="h23" min="{{minDate}}" hourValues="9,10,11,12,13,14,15,16,17" minuteValues="0,15,30,45" [isDateEnabled]="isWeekday" [(ngModel)]="rawDate"></ion-datetime>
       </ion-item>
-      <ion-button expand="block" color="inatel" class="ion-margin" (click)="setOpen(false)">Confirmar</ion-button>  
+      <ion-item>
+        <ion-select aria-label="Psicologo(a)" placeholder="Selecione o psicologo(a)" [(ngModel)]="rawPsicologo">
+          <ion-select-option value="Lidia Ferraz">Lidia Ferraz</ion-select-option>
+          <ion-select-option value="Debora Ferreira">Debora Ferreira</ion-select-option>
+          <ion-select-option value="Fernanda Oliveira">Fernanda Oliveira</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button expand="block" color="inatel" class="ion-margin" (click)="addConsulta()">Confirmar</ion-button>  
     </ion-content>
   </ng-template>
 </ion-modal>
