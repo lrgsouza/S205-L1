@@ -15,7 +15,7 @@ export class Tab2Page {
     nome: 'Otimização 2', 
     faltas: 6,
     faltasMax: 20,
-    n1: 'N/A',
+    n1: '100',
     n2: 'N/A',
     nf: 'N/A' 
     },
@@ -24,7 +24,7 @@ export class Tab2Page {
     nome: 'Engenharia de Software',
     faltas: 6,
     faltasMax: 20,
-    n1: 'N/A',
+    n1: '77',
     n2: 'N/A',
     nf: 'N/A' },
     { 
@@ -32,7 +32,7 @@ export class Tab2Page {
     nome: 'DevOps',
     faltas: 6,
     faltasMax: 20,
-    n1: 'N/A',
+    n1: '93',
     n2: 'N/A',
     nf: 'N/A' 
     },
@@ -41,7 +41,7 @@ export class Tab2Page {
     nome: 'Interface Homem Maquina',
     faltas: 6,
     faltasMax: 20,
-    n1: 'N/A',
+    n1: '90',
     n2: 'N/A',
     nf: 'N/A' 
     },
@@ -50,7 +50,7 @@ export class Tab2Page {
       nome: 'Segurança de Rede',
       faltas: 6,
       faltasMax: 20,
-      n1: 'N/A',
+      n1: '72',
       n2: 'N/A',
       nf: 'N/A' },
   ];
